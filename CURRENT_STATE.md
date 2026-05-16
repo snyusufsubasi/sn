@@ -86,6 +86,15 @@ Emulator adı:
 ARACIYOK_API35
 ```
 
+Son teknik kontrolde:
+
+- `assembleDebug` başarılı.
+- `installDebug` başarılı.
+- `com.araciyok.nativeapp` emülatöre kuruldu.
+- Uygulama `adb shell monkey -p com.araciyok.nativeapp -c android.intent.category.LAUNCHER 1` ile açıldı.
+- `adb shell pidof com.araciyok.nativeapp` process döndürdü.
+- Son log kontrolünde `FATAL EXCEPTION` / `AndroidRuntime` crash izi görünmedi.
+
 Son görsel kontrolde Nakliyeci anasayfası açıldı ve şu ekran doğrulandı:
 
 - Başlık: `Nakliyeci Paneli`
@@ -100,3 +109,27 @@ Son görsel kontrolde Nakliyeci anasayfası açıldı ve şu ekran doğrulandı:
 3. Operasyon akışında itiraz/aksaklık bildirimi demo state'i ekle.
 4. İlan detayında teklif kabulü, yük alındı onayı ve teslim onayını emulator üzerinde uçtan uca gez.
 5. Android UI polish turu yap: kart yoğunluğu, uzun metin taşması, filtre çipleri ve operasyon durum kartları.
+6. Supabase RLS/policy denetimi yap; demo mod local kalmalı, production Supabase akışı bozulmamalı.
+
+## Geliştirme Ortamı
+
+- GitHub repo: `https://github.com/snyusufsubasi/sn`
+- Branch: `main`
+- GitHub CLI: kalıcı girişli, `gh auth status` ile doğrula.
+- Supabase CLI: `2.98.2`, kurulum yolu `C:\Users\snyus\tools\supabase\supabase.exe`
+- Supabase proje ref: `ndmvpakioumtwefxguqd`
+- Java: Android Studio JBR, `C:\Program Files\Android\Android Studio\jbr`
+- Android SDK: `C:\Users\snyus\AppData\Local\Android\Sdk`
+- Emulator: `ARACIYOK_API35`
+- Flutter/Dart mevcut ama yeni ana geliştirme Flutter'da değil, `native/` altında.
+
+Yeni terminalde şu komutlar doğrudan çalışmalı:
+
+```powershell
+java -version
+adb version
+emulator -list-avds
+sdkmanager --version
+gh auth status
+supabase --version
+```

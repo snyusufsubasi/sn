@@ -2,6 +2,14 @@
 
 Kısa ve öz ilerle.
 
+OpenCode, DeepSeek veya başka bir ajan bu klasörde devam ediyorsa önce şunları oku:
+
+1. `OPENCODE_DEEPSEEK_HANDOFF.md`
+2. `CURRENT_STATE.md`
+3. `MVP_PLAN.md`
+4. `TODO.md`
+5. `HANDOFF.md`
+
 ## Proje Yönü
 
 ARACIYOK için güncel karar: **native mobil gerçek yük pazarı demo MVP**.
@@ -42,3 +50,12 @@ native/android/app/build/outputs/apk/debug/app-debug.apk
 ```
 
 Emulator yoksa bunu açıkça belirt.
+
+GitHub/Supabase ortam kontrolü:
+
+```powershell
+git status --short --branch
+gh auth status
+supabase --version
+adb devices
+```
