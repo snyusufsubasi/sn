@@ -50,3 +50,6 @@ app.*.map.json
 
 # Environment
 .env
+
+# Supabase local state
+supabase/.temp/
