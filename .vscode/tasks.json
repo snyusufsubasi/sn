@@ -1,0 +1,27 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "ARACIYOK: Kurulum (setup)",
+      "type": "shell",
+      "command": "powershell -NoProfile -ExecutionPolicy Bypass -File ${workspaceFolder}/scripts/setup.ps1",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    },
+    {
+      "label": "ARACIYOK: Chrome'da Aç",
+      "type": "shell",
+      "command": "flutter run -d chrome --web-port=8080 --web-hostname=127.0.0.1",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated", "focus": true }
+    },
+    {
+      "label": "ARACIYOK: Sunucuları Durdur",
+      "type": "shell",
+      "command": "powershell -NoProfile -ExecutionPolicy Bypass -File ${workspaceFolder}/scripts/stop.ps1",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    }
+  ]
+}

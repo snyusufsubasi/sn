@@ -1,10 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  TestWidgetsFlutterBinding.ensureInitialized();
-
-  test('Analyze passes with zero issues', () {
-    // Verify project structure is intact
+  test('placeholder — uygulama testleri feature klasöründe', () {
     expect(true, isTrue);
   });
 }

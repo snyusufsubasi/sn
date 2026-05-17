@@ -1,55 +1,75 @@
-# Miscellaneous
-*.class
-*.log
-*.pyc
-*.swp
-.DS_Store
-.atom/
-.build/
-.buildlog/
-.history
-.svn/
-.swiftpm/
-migrate_working_dir/
-
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.idea/
-
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
-
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
+# Flutter / Dart
 .dart_tool/
-.flutter-plugins-dependencies
+.packages
 .pub-cache/
 .pub/
-/build/
-/coverage/
-flutter_web_server*.log
-native/android/.gradle/
-native/android/.kotlin/
-native/android/app/build/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
 
-# Symbolication related
-app.*.symbols
+# IDE
+.idea/
+.claude/
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/settings.json
+*.iml
+*.iws
+*.ipr
 
-# Obfuscation related
-app.*.map.json
+# Generated files
+*.g.dart
+*.freezed.dart
+*.mocks.dart
+*.config.dart
+GeneratedPluginRegistrant.*
 
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
+# Native
+ios/Pods/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Runner/GeneratedPluginRegistrant.*
+android/.gradle/
+android/.kotlin/
+android/captures/
+android/local.properties
+android/**/GeneratedPluginRegistrant.java
+android/key.properties
+android/app/upload-keystore.jks
+android/app/google-services.json
+android/app/src/*/google-services.json
+*.jks
+*.keystore
+ios/Runner/GoogleService-Info.plist
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+ios/Flutter/flutter_export_environment.sh
 
-# Environment
+# Keep required Flutter project metadata, Gradle wrapper, and Android sources.
+!.metadata
+!android/gradle/wrapper/gradle-wrapper.jar
+!android/gradlew
+!android/gradlew.bat
+!android/app/src/main/java/
+!android/app/src/main/java/**
+!android/app/src/main/kotlin/
+!android/app/src/main/kotlin/**
+
+# Env / secrets
 .env
+.env.local
+.env.production
+*.env
 
-# Supabase local state
-supabase/.temp/
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+flutter_*.log
+
+# Coverage
+coverage/
+*.lcov
