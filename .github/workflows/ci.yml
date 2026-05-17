@@ -26,8 +26,11 @@ jobs:
       - name: Show Flutter version
         run: flutter --version
 
+      - name: Create .env for CI
+        run: cp .env.example .env
+
       - name: Install dependencies
-        run: flutter pub get --enforce-lockfile
+        run: flutter pub get
 
       - name: Generate l10n
         run: flutter gen-l10n
@@ -71,8 +74,11 @@ jobs:
           flutter-version: '3.27.x'
           cache: true
 
+      - name: Create .env for CI
+        run: cp .env.example .env
+
       - name: Install dependencies
-        run: flutter pub get --enforce-lockfile
+        run: flutter pub get
 
       - name: Generate l10n
         run: flutter gen-l10n
