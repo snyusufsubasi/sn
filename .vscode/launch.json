@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "ARACIYOK Web (Chrome)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "deviceId": "chrome",
+      "args": ["--web-port=8080", "--web-hostname=127.0.0.1"]
+    },
+    {
+      "name": "ARACIYOK Mobil (otomatik cihaz)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart"
+    },
+    {
+      "name": "ARACIYOK Admin (Web)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_admin.dart",
+      "deviceId": "chrome",
+      "args": ["--web-port=8090"]
+    }
+  ]
+}

@@ -5,16 +5,16 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
+val mapsApiKey =
+    (project.findProperty("GOOGLE_MAPS_API_KEY_ANDROID") as String?) ?: ""
+
 android {
-    namespace = "com.araciyok.tasima_app"
+    namespace = "com.example.araciyok"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
-    lint {
-        disable += "Instantiatable"
-    }
-
     compileOptions {
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
@@ -25,13 +25,18 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.araciyok.tasima_app"
+        applicationId = "com.example.araciyok"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
+        minSdk = 24
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+        manifestPlaceholders["GOOGLE_MAPS_API_KEY_ANDROID"] = mapsApiKey
+    }
+
+    dependencies {
+        coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
     }
 
     buildTypes {

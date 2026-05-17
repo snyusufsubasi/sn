@@ -1,0 +1,21 @@
+{
+  "files.exclude": {
+    "**/.cursor/**": true,
+    "**/cursor-public/**": true,
+    "**/aws-serverless/**": true,
+    "**/validate-template.sh": true
+  },
+  "files.watcherExclude": {
+    "**/.cursor/**": true,
+    "**/cursor-public/**": true,
+    "**/aws-serverless/**": true,
+    "**/validate-template.sh": true
+  },
+  "search.exclude": {
+    "**/.cursor/**": true,
+    "**/cursor-public/**": true,
+    "**/aws-serverless/**": true,
+    "**/validate-template.sh": true
+  },
+  "git.ignoreLimitWarning": true
+}

@@ -1,11 +1,11 @@
 {
-    "name": "ARACIYOK",
-    "short_name": "ARACIYOK",
+    "name": "araciyok",
+    "short_name": "araciyok",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#F8FAFC",
-    "theme_color": "#1B2A4A",
-    "description": "Yük veren ve nakliyeciyi aracısız buluşturan mobil uygulama.",
+    "background_color": "#0175C2",
+    "theme_color": "#0175C2",
+    "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
