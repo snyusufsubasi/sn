@@ -35,6 +35,7 @@ migrate_working_dir/
 flutter_web_server*.log
 native/android/.gradle/
 native/android/.kotlin/
+native/android/build/
 native/android/app/build/
 
 # Symbolication related
