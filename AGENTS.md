@@ -59,3 +59,42 @@ gh auth status
 supabase --version
 adb devices
 ```
+
+## Cursor Cloud specific instructions
+
+### Environment
+
+- **JAVA_HOME**: `/usr/lib/jvm/java-21-openjdk-amd64` (JDK 21, compatible with the project's JDK 17 target).
+- **ANDROID_HOME**: `/opt/android-sdk` — contains cmdline-tools, platform 36, build-tools 36, platform-tools.
+- These are set in `~/.bashrc`; the update script also exports them.
+
+### Building (Linux)
+
+The native Android project has no Gradle wrapper of its own. Use the Flutter-era wrapper:
+
+```bash
+./android/gradlew -p native/android assembleDebug
+```
+
+APK output: `native/android/app/build/outputs/apk/debug/app-debug.apk`
+
+### Lint & Tests
+
+```bash
+./android/gradlew -p native/android lintDebug
+./android/gradlew -p native/android testDebugUnitTest
+```
+
+Pre-existing lint errors exist (2 `NewApi` errors from `java.time.LocalDate` usage on minSdk 24). No unit test sources exist yet — `testDebugUnitTest` succeeds with `NO-SOURCE`.
+
+### Running on Emulator
+
+Cloud VMs have no Android emulator or display. APK can only be built, not installed/run. State this explicitly when asked to demonstrate the running app.
+
+### Supabase
+
+Demo mode is fully local (no Supabase writes). Supabase CLI is not installed and not required for the native demo build. The `supabase/` directory contains SQL migrations for the production backend only.
+
+### Flutter (Legacy)
+
+The root `pubspec.yaml` and `android/` directory belong to the legacy Flutter prototype. Do not attempt to build them — they require Flutter SDK and a `local.properties` file, neither of which is present.
